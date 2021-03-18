@@ -27,60 +27,40 @@
                 
             <section>
                 <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "quote_db";
-
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
+                    try {
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "quote_db";
+    
+                        // Create connection
+                        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                        // set the PDO error mode to exception
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    }
+                    catch(PDOException $e)
+                    {
+                        echo "Connection failed: " . $e->getMessage();
                     }
 
-                    if(!isset($_POST['submit'])) {
-                        
-                        
-                        $sql = "CREATE DATABASE quote_db;
-
-                                USE quote_db;
-                                
-                                CREATE TABLE IF NOT EXISTS quote_table (
-                                    id int NOT NULL AUTO_INCREMENT,
-                                    quote char(200) NOT NULL,
-                                    PRIMARY KEY (id)
-                                );
-
-                                INSERT INTO `quote_table` (`id`, `quote`) 
-                                VALUES 
-                                (NULL,'Be yourself. everyone else is already taken. -Oscar Wilde'),
-                                (NULL,'So many books, so little time. -Frank Zappa'),
-                                (NULL,'A room without books is like a body without a soul. -Marcus Tullius Cicero'),
-                                (NULL,'You only live once, but if you do it right, once is enough. -Mae West'),
-                                (NULL,'Be the change that you wish to see in the world. -Mahatma Gandhi'),
-                                (NULL,'In three words I can sum up everything I\'ve learned about life. it goes on. -Robert Frost'),
-                                (NULL,'If you tell the truth, you don\'t have to remember anything. -Mark Twain'),
-                                (NULL,'A friend is someone who knows all about you and still loves you. -Elbert Hubbard'),
-                                (NULL,'Always forgive your enemies; nothing annoys them so much. -Oscar Wilde'),
-                                (NULL,'Without music, life would be a mistake. -Friedrich Nietzsche, Twilight of the Idols');";
-                        
-                        
-                    } else {
+                    if(isset($_POST['submit'])) {
                         $rnd = rand(1, 10);
                         $sql = "SELECT quote
                                 FROM quote_table
                                 WHERE id = $rnd;";
                         $result = $conn->query($sql);
-                        while ($row = $result->fetch_assoc()) {
-                            $quote = $row['quote'];
-                            echo "<h3>Today's Quote is<br><br>
-                            \"$quote\"</h3><br><br>
-                            <p>this page will be refreshed in 10 secconds</p>";
+                        
+                        if ($result->rowcount() > 0) {
+                            while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                $quote = $row['quote'];
+                                echo "<h3>Today's Quote is<br><br>
+                                \"$quote\"</h3><br><br>
+                                <p>this page will be refreshed in 10 secconds</p>";
+                                header("refresh:10; url=activity4.php");
+                            }
                         }
-                        header("refresh:10; url=QuoteOfToday.php");
                     }
-                    $conn->close();
+                    $conn = null;
                 ?>
             </section>
         </main>
