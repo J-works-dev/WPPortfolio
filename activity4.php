@@ -32,6 +32,8 @@
                     <button type="submit" name="submit">Quote of Today</button>
                 </form>
             </section>
+            <br>
+            <br>
         </main>
     </body>
 </html>

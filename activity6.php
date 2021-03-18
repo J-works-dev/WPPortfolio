@@ -18,14 +18,19 @@
             <li class="nav-index active"><a href="activity6.php">Activity 6</a></li>
         </ul>
         <main>
-            <h4>This whole site is involved in Activity 1</h4>
-            <h5>Assessment Specification </h5>
-                <li>Design and implement a website that demonstrates a page navigation.</li><br><br>
-                <li>Include a navigation bar that can access four different pages, e.g. Home, Contact, etc…</li>
+            <h3>Portfolio Activity 6</h3>
+            <h4>Assessment Specification </h4>
+                <li>Create a table with 10 quotes in a MySQL database – name the database “quote_db” and name the table “quote_table”.</li><br>
+                <li>Save or Export the SQL that creates your database and table in a text file, e.g. db.sql</li><br>
+                <li>Test your program and validate the database structure and its elements against the requirements and provide a test document.<br>
+                    &emsp; o Your program will randomly read a record (a quote) from the database table for the day and display on the web browser. </li><br>
                 
             <section>
                 <p>2021 1 Semister Web Programming Assessment Website</p>
+                <?php include 'randomIntegerReport.php' ?>
             </section>
+            <br>
+            <br>
         </main>
     </body>
 </html>

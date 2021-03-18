@@ -34,6 +34,8 @@
                     <button type="submit" name="submit">Enter</button>
                 </form>
             </section>
+            <br>
+            <br>
         </main>
     </body>
 </html>
