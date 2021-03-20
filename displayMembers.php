@@ -26,10 +26,10 @@
                 <div class="sidebar">
                     <ul class="sidebar-nav">
                         <li><a href="activity6.php">
-                            <div class="side-nav active">Add Membership</div>
+                            <div class="side-nav">Add Membership</div>
                         </a></li>
                         <li><a href="displayMembers.php">
-                        <div class="side-nav">Membership List</div>
+                        <div class="side-nav active">Membership List</div>
                         </a></li>
                     </ul>
                 </div>
@@ -45,18 +45,14 @@
                             <input type="text" class="form-control" id="last_name" name="last_name">
                         </div>
                         <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email">
+                            <label for="id">ID</label>
+                            <input type="text" class="form-control" id="id" name="id">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
-                        <div class="form-group">
-                            <label for="vPassword">Verify Password</label>
-                            <input type="password" class="form-control" id="vPassword" name="vPassword">
-                        </div>
-                        <button type="submit" name = "submit" class="btn">Add</button>
+                        <button type="submit" name = "submit" class="btn btn-default">Add</button>
                     </form>
                 </div>
             </section>
