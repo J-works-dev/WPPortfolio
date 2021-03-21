@@ -29,31 +29,15 @@
                             <div class="side-nav">Add Membership</div>
                         </a></li>
                         <li><a href="displayMembers.php">
-                        <div class="side-nav active">Membership List</div>
+                        <div class="side-nav active2">Membership List</div>
                         </a></li>
                     </ul>
                 </div>
                 <div class="main-section">
-                    <h3>Add Member</h3>
-                    <form action="addMember.php" method="post">
-                        <div class="form-group">
-                            <label for="first_name">First Name</label>
-                            <input type="text" class="form-control" id="first_name" name="first_name">
-                        </div>
-                        <div class="form-group">
-                            <label for="last_name">Last Name</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name">
-                        </div>
-                        <div class="form-group">
-                            <label for="id">ID</label>
-                            <input type="text" class="form-control" id="id" name="id">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password">
-                        </div>
-                        <button type="submit" name = "submit" class="btn btn-default">Add</button>
-                    </form>
+                    <article id="home"class="col-lg-12">
+                        <h3>Member List</h3>
+                        <?php include 'listMember_scr.php'; ?>
+                    </article>
                 </div>
             </section>
             <br>

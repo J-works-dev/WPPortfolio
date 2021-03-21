@@ -26,7 +26,7 @@
                 <div class="sidebar">
                     <ul class="sidebar-nav">
                         <li><a href="activity6.php">
-                            <div class="side-nav active">Add Membership</div>
+                            <div class="side-nav active2">Add Membership</div>
                         </a></li>
                         <li><a href="displayMembers.php">
                         <div class="side-nav">Membership List</div>
@@ -53,8 +53,8 @@
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
                         <div class="form-group">
-                            <label for="vPassword">Verify Password</label>
-                            <input type="password" class="form-control" id="vPassword" name="vPassword">
+                            <label for="password2">Verify Password</label>
+                            <input type="password" class="form-control" id="password2" name="password2">
                         </div>
                         <button type="submit" name = "submit" class="btn">Add</button>
                     </form>
