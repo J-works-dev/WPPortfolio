@@ -107,12 +107,12 @@
                 $number    = preg_match('#[0-9]#', $password);
                 $special   = preg_match('#[\W]#', $password); 
                 $length    = strlen($password) >= 6;
-                echo $password . "<br>";
-                echo $uppercase . "<br>";
-                echo $lowercase . "<br>";
-                echo $number . "<br>";
-                echo $special . "<br>";
-                echo "length: " . $length;
+                // echo $password . "<br>";
+                // echo $uppercase . "<br>";
+                // echo $lowercase . "<br>";
+                // echo $number . "<br>";
+                // echo $special . "<br>";
+                // echo "length: " . $length;
                 if ($uppercase && $lowercase && $number && $length) // && preg_match("[._-?!@#$%^&*~]", $password)) //^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$
                 {
                     echo "passed password";
@@ -151,7 +151,7 @@
             if ($conn->query($sql)) {
                 echo "<p>Success!!</p><br>
                 <p>this page will be refreshed in 5 secconds</p>";
-                // header("refresh:5; url=activity6.php");
+                header("refresh:5; url=activity6.php");
             }
         }
     }
